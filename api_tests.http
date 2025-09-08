@@ -1,0 +1,7 @@
+### 1. Generate a new secure password
+POST http://localhost:8080/api/v1/password/generate
+Content-Type: application/json
+
+{
+  "length": 20
+}
