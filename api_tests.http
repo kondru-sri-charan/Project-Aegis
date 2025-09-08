@@ -1,7 +1,32 @@
-### 1. Generate a new secure password
-POST http://localhost:8080/api/v1/password/generate
+###
+### ========= OTP Endpoints =========
+###
+
+### 2. Generate an OTP for a user
+POST http://localhost:8080/api/v1/otp/generate
 Content-Type: application/json
 
 {
-  "length": 20
+  "userId": "sricharan@example.com"
+}
+
+###
+### 3. Verify an OTP (SUCCESS CASE)
+# Check your VS Code terminal for the generated OTP and paste it here
+POST http://localhost:8080/api/v1/otp/verify
+Content-Type: application/json
+
+{
+  "userId": "sricharan@example.com",
+  "otp": "PASTE_THE_6_DIGIT_OTP_HERE"
+}
+
+###
+### 4. Verify an OTP (FAILURE CASE - WRONG OTP)
+POST http://localhost:8080/api/v1/otp/verify
+Content-Type: application/json
+
+{
+  "userId": "sricharan@example.com",
+  "otp": "999999"
 }
