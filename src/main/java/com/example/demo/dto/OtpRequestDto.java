@@ -4,5 +4,5 @@ import lombok.Data;
 
 @Data
 public class OtpRequestDto {
-    private String userId; // Can be an email, username, phone number, etc.
+    private String identifier; // Can be an email, username, phone number, etc.
 }
