@@ -27,7 +27,7 @@ public class OtpController {
 
     @PostMapping("/verify")
     public ResponseEntity<GenericResponseDto> verifyOtp(@RequestBody OtpVerificationDto verificationDto) {
-        boolean isValid = otpService.verifyOtp(verificationDto.getUserId(), verificationDto.getOtp());
+        boolean isValid = otpService.verifyOtp(verificationDto.getIdentifier(), verificationDto.getOtp());
 
         if (isValid) {
             return ResponseEntity.ok(new GenericResponseDto("success", "OTP verified successfully."));
