@@ -19,7 +19,7 @@ public class OtpController {
 
     @PostMapping("/generate")
     public ResponseEntity<GenericResponseDto> generateOtp(@RequestBody OtpRequestDto otpRequest) {
-        otpService.generateOtp(otpRequest.getUserId());
+        otpService.generateOtp(otpRequest.getIdentifier());
         // For security, we don't send the OTP back in the response.
         // The user gets it via email/SMS.
         return ResponseEntity.ok(new GenericResponseDto("success", "OTP has been generated and sent."));

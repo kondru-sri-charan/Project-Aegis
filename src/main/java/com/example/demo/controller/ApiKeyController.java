@@ -19,7 +19,7 @@ public class ApiKeyController {
 
     @PostMapping("/generate")
     public ResponseEntity<?> generateApiKey(@RequestBody OtpRequestDto request) {
-        String rawKey = apiKeyService.generateApiKey(request.getUserId());
+        String rawKey = apiKeyService.generateApiKey(request.getIdentifier());
         return ResponseEntity.ok(Map.of("apiKey", rawKey));
     }
 }
